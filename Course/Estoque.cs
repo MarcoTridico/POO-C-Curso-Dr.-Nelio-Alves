@@ -24,7 +24,18 @@ namespace Course
             Produto produto1 = new Produto(id, nome, preco, quantidade);
             produtos.Add(produto1);
         }
-
+        
+        public void Altera()
+        {
+            Console.Write("Digite o Id do produto que deseja alterar: ");
+            int idAlteracao = int.Parse(Console.ReadLine());
+            Produto produtoBusca = produtos.Find(p => p.Id == idAlteracao);
+            Console.WriteLine(produtoBusca);
+            Console.Write("Digite o novo preco do produto: ");
+            double precoAlterado = double.Parse(Console.ReadLine());
+            produtoBusca.AlteraPreco(precoAlterado);
+            Console.WriteLine(produtoBusca);
+        }
         public void Consulta()
         {
             foreach( Produto produto in produtos)

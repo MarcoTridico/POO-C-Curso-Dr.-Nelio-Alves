@@ -26,6 +26,9 @@ internal class Program
                 case "cad":
                     estoque.Cadastra();
                     break;
+                case "alt":
+                    estoque.Altera();
+                    break;
                 case "con":
                     estoque.Consulta();
                     break;

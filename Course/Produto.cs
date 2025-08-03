@@ -28,6 +28,11 @@ namespace Course
             return subtotal;
         }
 
+        public double AlteraPreco(double preco)
+        {
+            return Preco = preco;
+        }
+
         public override string ToString()
         {
             return "ID: " + Id + " Produto: " + Nome + "\t Preco: " + Preco.ToString("C") + "\t Quantidade: " + Quantidade + " \tTotal: R" + CalculaSubTotal().ToString("C");
