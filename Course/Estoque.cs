@@ -36,12 +36,35 @@ namespace Course
             produtoBusca.AlteraPreco(precoAlterado);
             Console.WriteLine(produtoBusca);
         }
+
+        public void Deleta()
+        {
+            Console.Write("Digite o Id do produto que deseja apagar: ");
+            int idDeleta = int.Parse(Console.ReadLine());
+            Produto produtoBusca = produtos.Find(p => p.Id == idDeleta);
+            Console.WriteLine(produtoBusca);
+            Console.Write("Tem certeza que deseja apagar o produto selecionado? digite 's' para apagar ou qualquer outra tecla para desistir: ");
+            string resposta = Console.ReadLine();
+            if (resposta == "s" || resposta == "S")
+            {
+                produtos.Remove(produtoBusca);
+                Console.WriteLine("Produto apagado com sucesso! ");
+            }
+            else
+            {
+                Console.WriteLine("Operacao abortada, retornando ao menu!");
+            }
+            
+
+        }
         public void Consulta()
         {
+            Console.WriteLine("");
             foreach( Produto produto in produtos)
             {
                 Console.WriteLine(produto);
             }
+            Console.WriteLine("");
         }
 
 

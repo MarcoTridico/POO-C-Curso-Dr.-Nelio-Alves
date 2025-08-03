@@ -17,8 +17,9 @@ internal class Program
                               "Digite 'alt' para alterar:  \n" +
                               "Digite 'del' para apagar:   \n" +
                               "Digite 'con' para consultar:\n" +
-                              "Digite 'sair' para fechar   \n");
-
+                              "Digite 'sair' para fechar   \n" +
+                              "----------------------------");
+            Console.Write("Digite o comando: ");
             string escolhaMenu = Console.ReadLine();
 
             switch (escolhaMenu)
@@ -28,6 +29,9 @@ internal class Program
                     break;
                 case "alt":
                     estoque.Altera();
+                    break;
+                case "del":
+                    estoque.Deleta();
                     break;
                 case "con":
                     estoque.Consulta();
