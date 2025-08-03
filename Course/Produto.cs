@@ -9,18 +9,15 @@ namespace Course
 {
     public class Produto
     {
-        public int Id { get; set; }
+        private static int _contadorId = 0;
+        public int Id { get; private set; }
         public string Nome { get; set; }
         public double Preco { get; private set; }
         public int Quantidade { get; set; }
 
-        public Produto()
+        public Produto (string nome, double preco, int quantidade)
         {
-
-        }
-        public Produto (int id, string nome, double preco, int quantidade)
-        {
-            Id = id;
+            Id = ++_contadorId;
             Nome = nome;
             Preco = preco;
             Quantidade = quantidade;

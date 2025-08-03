@@ -8,8 +8,7 @@ internal class Program
     {
         Estoque estoque = new Estoque();
         bool bandeira = true;
-        int id = 1;
-
+        
         do
         {
 
@@ -26,8 +25,7 @@ internal class Program
             switch (escolhaMenu)
             {
                 case "cad":
-                    estoque.Cadastra(id);
-                    id++;
+                    estoque.Cadastra();
                     break;
                 case "alt":
                     estoque.Altera();

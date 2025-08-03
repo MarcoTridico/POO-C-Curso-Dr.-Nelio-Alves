@@ -10,20 +10,38 @@ namespace Course
     public class Estoque
     {
         List<Produto> produtos = new List<Produto>();
-        
 
-        
-        public void Cadastra(int id)
+
+
+        public void Cadastra()
         {
-            Console.WriteLine("ID do produto: " + id);
+            string nome = "padrao";
             Console.Write("Digite o Nome: ");
-            string nome = (Console.ReadLine());
+            string entrada1 = (Console.ReadLine());
+            if (entrada1 != "")
+            {
+                nome = entrada1;
+            }
+            else
+            {
+                Console.WriteLine("Nome do produto nao pode ser nulo, saindo da rotina de cadastro!");
+                return;
+            }
             Console.Write("Digite o preco: ");
-            double preco = double.Parse(Console.ReadLine());
-            Console.Write("Digite a quantidade: ");
-            int quantidade = int.Parse(Console.ReadLine());
-            Produto produto1 = new Produto(id, nome, preco, quantidade);
-            produtos.Add(produto1);
+            string entrada2 = Console.ReadLine();
+            if (double.TryParse(entrada2, out double preco))
+            {
+                Console.Write("Digite a quantidade: ");
+                int quantidade = int.Parse(Console.ReadLine());
+                Produto produto1 = new Produto(nome, preco, quantidade);
+                produtos.Add(produto1);
+            }
+            else
+            {
+                Console.WriteLine("Preco invalido, deve ser um valor numerico! Saindo da rotina!");
+                return;
+            }
+            
         }
         
         public void Altera()
