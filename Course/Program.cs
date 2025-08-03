@@ -1,13 +1,14 @@
 ﻿using Course;
 using System.Globalization;
 
-
+//Pequeno exercicio para colocar em pratica primeiras aulas do curso de Orientacao a Objetos do Professor Nelio Alves
 internal class Program
 {
     private static void Main(string[] args)
     {
         Estoque estoque = new Estoque();
         bool bandeira = true;
+        int id = 1;
 
         do
         {
@@ -25,7 +26,8 @@ internal class Program
             switch (escolhaMenu)
             {
                 case "cad":
-                    estoque.Cadastra();
+                    estoque.Cadastra(id);
+                    id++;
                     break;
                 case "alt":
                     estoque.Altera();
@@ -38,6 +40,9 @@ internal class Program
                     break;
                 case "sair":
                     bandeira = false;
+                    break;
+                default: //trata qualquer entrada que nao for uma opcao valida do menu
+                    Console.WriteLine("Entrada invalida, digite uma das opcoes do menu: ");
                     break;
             }
 

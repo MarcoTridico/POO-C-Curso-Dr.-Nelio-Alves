@@ -10,11 +10,12 @@ namespace Course
     public class Estoque
     {
         List<Produto> produtos = new List<Produto>();
+        
 
-        public void Cadastra()
+        
+        public void Cadastra(int id)
         {
-            Console.Write("Digite o ID do produto: ");
-            int id = int.Parse(Console.ReadLine());
+            Console.WriteLine("ID do produto: " + id);
             Console.Write("Digite o Nome: ");
             string nome = (Console.ReadLine());
             Console.Write("Digite o preco: ");
